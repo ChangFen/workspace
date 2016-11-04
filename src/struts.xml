@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.ui.theme" value="simple"/>
+	<package name="com.one" extends="json-default">
+		<action name="apartmentAction_*" class="apartmentAction" method="{1}">
+			<result name="index" type="redirect">/index.jsp</result>
+			<result name="add">/apartment_add.jsp</result>
+			<result name="success" type="json">
+				<param name="includeProperties">list.*,bl</param>
+			</result>
+		</action>
+		
+		<action name="labelAction_*" class="labelAction" method="{1}">
+			<result name="success" type="json">
+				<param name="includeProperties">bl</param>
+			</result>
+		</action>
+		
+		<action name="alyoutAction_*" class="alyoutAction" method="{1}">
+			<result name="success" type="json">
+				<param name="includeProperties">bl</param>
+			</result>
+		</action>
+	</package>
+</struts>
